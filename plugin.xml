@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="com.jeaw.qxjszb.cordova.RFID" version="0.0.1" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>RFID</name>
+    <description>Description</description>
+    <js-module name="RFID" src="www/RFID.js">
+        <clobbers target="navigator.RFID"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="RFID">
+                <param name="android-package" value="com.jeaw.qxjszb.cordova.RFID"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/RFID.java" target-dir="src/com/jeaw/qxjszb/cordova"/>
+        <source-file src="src/android/android/hardware/uhf/magic/reader.java" target-dir="src/android/hardware/uhf/magic"/>
+        <source-file src="src/android/android/hardware/uhf/reader.java" target-dir="src/android/hardware/uhf"/>
+        <source-file src="src/android/armeabi/libuhf-tools.so" target-dir="libs/armeabi"/>
+    </platform>
+</plugin>
